@@ -15,7 +15,7 @@ class WordsFinder:
                     # Удаление пунктуации
                     for punct in punctuation_to_remove:
                         content = content.replace(punct, '')
-                    words = content.split()  # Разбивка строки на слова
+                    words = content.split()  
                     all_words[file_name] = words
             except FileNotFoundError:
                 print(f"Файл {file_name} не найден.")
@@ -30,7 +30,7 @@ class WordsFinder:
 
         for file_name, words in all_words.items():
             if word in words:
-                positions[file_name] = words.index(word) + 1  # Возвращаем позицию, начиная с 1
+                positions[file_name] = words.index(word) + 1  
             else:
                 positions[file_name] = None
 
